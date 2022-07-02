@@ -12,7 +12,7 @@ setup:
 	rm -f ./ios/Podfile.lock
 	# arch -x86_64 npx react-native link
 	arch -x86_64 pod install --project-directory='./ios/'
-	arch -x86_64 npx react-native bundle --entry-file='index.native.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'
+	arch -x86_64 npx react-native bundle --entry-file='index.native.ts' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'
 	yarn jetify
 # ios run application
 start-ios:
@@ -47,7 +47,7 @@ start-android-integration:
 
 
 build-js:
-	arch -x86_64 npx react-native bundle --entry-file='index.native.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'
+	arch -x86_64 npx react-native bundle --entry-file='index.native.ts' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'
 
 build-android-staging:
 	node ./support/change_android_app_version.js
