@@ -58,8 +58,10 @@ const tsLoaderConfiguration = {
 module.exports = {
   mode: webpackEnv,
   entry: {
-    app: path.join(rootDir, './index.web.ts'),
-    index: path.join(rootDir, './web/index.js'),
+    app: [
+      path.join(rootDir, './index.web.ts'),
+      path.join(rootDir, './web/index.js'),
+    ],
   },
   output: {
     path: path.resolve(rootDir, 'dist'),
